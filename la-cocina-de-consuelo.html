@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Cocina de Consuelo — Authentic Mexican Kitchen · Austin, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Libre+Baskerville:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --terracotta: #C2582A;
+    --terracotta-light: #E07A50;
+    --terracotta-pale: #F5E8DF;
+    --sage: #6B7C5E;
+    --sage-light: #A3B08F;
+    --sage-pale: #EBF0E5;
+    --ochre: #C9953B;
+    --ochre-pale: #FDF4E3;
+    --cream: #FAF5EE;
+    --dark: #2A1E14;
+    --dark-mid: #4A3728;
+    --mid: #7A6050;
+    --warm-border: rgba(194, 88, 42, 0.18);
+    --serif: 'Playfair Display', Georgia, serif;
+    --serif2: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(250, 245, 238, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--warm-border);
+    transition: padding 0.3s;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-logo span { display: block; font-size: 0.65rem; font-weight: 400; color: var(--mid); font-family: var(--sans); letter-spacing: 0.12em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--dark-mid); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--dark); }
+
+  /* ─── HERO ────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 6rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-family: var(--sans);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--terracotta); }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5.5vw, 5rem);
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 0.25rem;
+  }
+  .hero-title em { font-style: italic; color: var(--terracotta); }
+  .hero-subtitle {
+    font-family: var(--serif2);
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--mid);
+    margin-bottom: 2rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--dark-mid);
+    max-width: 440px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--dark); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1.5px solid var(--terracotta);
+    color: var(--terracotta);
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { background: var(--terracotta); color: #fff; }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-img-wrap {
+    position: absolute;
+    inset: 0;
+    background: var(--dark);
+  }
+  .hero-img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #3D1F0E 0%, #7A3B18 40%, #C2582A 80%, #E07A50 100%);
+    opacity: 0.88;
+    z-index: 1;
+  }
+  /* Decorative tile pattern */
+  .hero-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px);
+    z-index: 2;
+  }
+  .hero-img-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem;
+  }
+  .hero-img-quote {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  .hero-img-attr {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Big decorative number */
+  .hero-year {
+    position: absolute;
+    top: 3rem;
+    right: 2.5rem;
+    font-family: var(--serif);
+    font-size: 9rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    z-index: 3;
+    letter-spacing: -0.04em;
+  }
+
+  /* ─── STORY STRIP ─────────────────────── */
+  .story-strip {
+    background: var(--dark);
+    color: #fff;
+    padding: 1.5rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  .strip-item { text-align: center; flex: 1; }
+  .strip-item .num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--terracotta-light);
+    line-height: 1;
+  }
+  .strip-item .label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.25rem;
+  }
+  .strip-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.12); }
+
+  /* ─── ABOUT ───────────────────────────── */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+  }
+  .about-visual {
+    background: var(--terracotta-pale);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Talavera-inspired decorative element */
+  .talavera {
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 280px;
+    height: 280px;
+    opacity: 0.07;
+  }
+  .talavera2 {
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 220px;
+    height: 220px;
+    opacity: 0.07;
+    transform: rotate(45deg);
+  }
+  .about-big-text {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--terracotta);
+    line-height: 0.9;
+    position: relative;
+    z-index: 2;
+  }
+  .about-visual-sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .timeline {
+    position: relative;
+    z-index: 2;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tl-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(194, 88, 42, 0.15);
+  }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-year {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    min-width: 60px;
+    padding-top: 0.1rem;
+  }
+  .tl-text { font-size: 0.9rem; line-height: 1.7; color: var(--dark-mid); }
+
+  .about-content {
+    background: var(--cream);
+    padding: 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .section-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--terracotta); }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 1.75rem;
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+  .section-body {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--dark-mid);
+    font-weight: 300;
+    max-width: 520px;
+  }
+  .section-body + .section-body { margin-top: 1.2rem; }
+
+  /* ─── MENU ────────────────────────────── */
+  .menu-section {
+    background: var(--dark);
+    padding: 7rem 6rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .menu-section::before {
+    content: 'MENÚ';
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-size: 15rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.04em;
+  }
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+  .menu-header .section-tag { color: var(--terracotta-light); }
+  .menu-header .section-tag::before { background: var(--terracotta-light); }
+  .menu-header .section-title { color: #fff; margin-bottom: 0; }
+  .menu-header .section-title em { color: var(--terracotta-light); }
+
+  .menu-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 3rem;
+  }
+  .menu-tab {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgba(255,255,255,0.4);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .menu-tab.active { color: var(--terracotta-light); border-bottom-color: var(--terracotta-light); }
+  .menu-tab:hover:not(.active) { color: rgba(255,255,255,0.7); }
+
+  .menu-panel { display: none; }
+  .menu-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; }
+  .menu-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .menu-item-info {}
+  .menu-item-name {
+    font-family: var(--serif2);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+  }
+  .menu-item-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.42);
+    line-height: 1.5;
+  }
+  .menu-item-price {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--terracotta-light);
+    white-space: nowrap;
+    padding-top: 0.1rem;
+  }
+
+  /* Daily specials banner */
+  .specials-banner {
+    margin-top: 3.5rem;
+    border: 1px solid rgba(194, 88, 42, 0.4);
+    padding: 2rem 2.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .specials-banner h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--ochre);
+    margin-bottom: 1.25rem;
+  }
+  .specials-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  .special-day {
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(255,255,255,0.04);
+    transition: background 0.2s;
+  }
+  .special-day:hover { background: rgba(194, 88, 42, 0.15); }
+  .special-day-name {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+  }
+  .special-day-dish {
+    font-family: var(--serif2);
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+  }
+  .special-price {
+    font-size: 0.78rem;
+    color: var(--terracotta-light);
+    margin-top: 0.35rem;
+  }
+
+  /* ─── EXPERIENCE ──────────────────────── */
+  .experience {
+    background: var(--cream);
+    padding: 7rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .exp-content {}
+  .exp-features {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .exp-feature {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.25rem;
+    background: var(--terracotta-pale);
+    border-left: 3px solid var(--terracotta);
+    transition: transform 0.2s;
+  }
+  .exp-feature:hover { transform: translateX(4px); }
+  .exp-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--terracotta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .exp-feature-title { font-weight: 500; font-size: 0.95rem; color: var(--dark); margin-bottom: 0.3rem; }
+  .exp-feature-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.5; }
+
+  .exp-visual {
+    position: relative;
+  }
+  .exp-card {
+    background: var(--dark);
+    color: #fff;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--terracotta), var(--ochre));
+  }
+  .exp-card-quote {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.5rem;
+  }
+  .exp-card-open-quote {
+    font-family: var(--serif);
+    font-size: 5rem;
+    line-height: 0.5;
+    color: var(--terracotta);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .exp-card-attr {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .exp-card-attr::before { content: ''; display: block; width: 20px; height: 1px; background: var(--terracotta); }
+
+  .exp-hours {
+    margin-top: 2rem;
+    background: var(--terracotta-pale);
+    padding: 2rem;
+    border: 1px solid var(--warm-border);
+  }
+  .exp-hours h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+  .hours-grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed rgba(194, 88, 42, 0.2);
+    color: var(--dark-mid);
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .day { font-weight: 500; color: var(--dark); }
+  .hours-row .time { color: var(--terracotta); font-weight: 500; }
+  .hours-row .closed { color: var(--mid); font-style: italic; }
+
+  /* ─── CATERING ────────────────────────── */
+  .catering {
+    background: var(--sage-pale);
+    padding: 6rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .catering .section-tag { color: var(--sage); }
+  .catering .section-tag::before { background: var(--sage); }
+  .catering .section-title em { color: var(--sage); }
+
+  .catering-desc {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--dark-mid);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  .catering-includes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .catering-item {
+    font-size: 0.85rem;
+    color: var(--dark-mid);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .catering-item::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .catering-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .catering-stat {
+    background: var(--dark);
+    color: #fff;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .catering-stat-num {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--terracotta-light);
+    line-height: 1;
+  }
+  .catering-stat-label {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.6);
+  }
+  .catering-stat-label strong { color: #fff; font-weight: 500; }
+
+  /* ─── TESTIMONIALS ─────────────────────── */
+  .testimonials {
+    background: var(--terracotta-pale);
+    padding: 7rem 6rem;
+    text-align: center;
+  }
+  .testimonials .section-tag { justify-content: center; }
+  .testimonials .section-tag::before { display: none; }
+  .testimonials .section-title { text-align: center; margin-bottom: 3.5rem; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .review-card {
+    background: #fff;
+    padding: 2rem 1.75rem;
+    text-align: left;
+    border-top: 3px solid var(--terracotta);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .review-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(42, 30, 20, 0.1); }
+  .review-stars { color: var(--ochre); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem; }
+  .review-text {
+    font-family: var(--serif2);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--dark-mid);
+    margin-bottom: 1.25rem;
+  }
+  .review-author {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+  }
+  .review-source { color: var(--terracotta); font-size: 0.72rem; margin-top: 0.2rem; }
+
+  /* ─── CTA SECTION ─────────────────────── */
+  .cta-section {
+    background: var(--terracotta);
+    padding: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+  .cta-text {}
+  .cta-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  .cta-sub { font-size: 1rem; color: rgba(255,255,255,0.72); font-weight: 300; }
+  .cta-actions { display: flex; gap: 1rem; flex-shrink: 0; }
+  .btn-white {
+    background: #fff;
+    color: var(--terracotta);
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-white:hover { background: var(--dark); color: #fff; }
+  .btn-outline-white {
+    border: 1.5px solid rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.9);
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.12); }
+
+  /* ─── FOOTER ──────────────────────────── */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.55);
+    padding: 4rem 6rem 2.5rem;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 2rem;
+  }
+  .footer-brand .logo {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--terracotta-light);
+    display: block;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+  }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.7; font-weight: 300; }
+  .footer-col h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.25rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul a { text-decoration: none; color: rgba(255,255,255,0.55); font-size: 0.9rem; font-weight: 300; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--terracotta-light); }
+  .footer-contact-item { font-size: 0.88rem; font-weight: 300; line-height: 1.7; }
+  .footer-contact-item + .footer-contact-item { margin-top: 0.5rem; }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+  }
+  .footer-socials { display: flex; gap: 1.25rem; }
+  .footer-socials a { color: rgba(255,255,255,0.4); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: color 0.2s; }
+  .footer-socials a:hover { color: var(--terracotta-light); }
+
+  /* ─── DECORATIVE SVG ELEMENTS ─────────── */
+  .deco-chili {
+    position: absolute;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  /* ─── ANIMATIONS ──────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .fade-up-2 { animation: fadeUp 0.7s 0.15s ease forwards; opacity: 0; }
+  .fade-up-3 { animation: fadeUp 0.7s 0.3s ease forwards; opacity: 0; }
+  .fade-up-4 { animation: fadeUp 0.7s 0.45s ease forwards; opacity: 0; }
+
+  /* ─── RESPONSIVE ──────────────────────── */
+  @media (max-width: 1024px) {
+    nav { padding: 1.25rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 2.5rem 3rem; }
+    .hero-right { min-height: 55vw; }
+    .story-strip { padding: 1.5rem 2.5rem; flex-wrap: wrap; gap: 1.5rem; }
+    .about { grid-template-columns: 1fr; }
+    .about-visual { padding: 4rem 2.5rem; }
+    .about-content { padding: 4rem 2.5rem; }
+    .menu-section { padding: 5rem 2.5rem; }
+    .specials-grid { grid-template-columns: repeat(3, 1fr); }
+    .experience { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .catering { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .testimonials { padding: 5rem 2.5rem; }
+    .reviews-grid { grid-template-columns: 1fr; max-width: 600px; }
+    .cta-section { flex-direction: column; padding: 4rem 2.5rem; text-align: center; }
+    .cta-actions { justify-content: center; flex-wrap: wrap; }
+    footer { padding: 3rem 2.5rem 2rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-logo">
+    La Cocina de Consuelo
+    <span>Authentic Mexican · Austin, TX</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#experience">Visit</a></li>
+    <li><a href="#catering">Catering</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://la-cocina-de-consuelo.square.site/" target="_blank" class="nav-cta">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag fade-up">Est. 2006 · Austin, Texas</p>
+    <h1 class="hero-title fade-up-2">
+      <em>Sabores</em> de<br>
+      Casa
+    </h1>
+    <p class="hero-subtitle fade-up-3">Consuelo's Kitchen</p>
+    <p class="hero-desc fade-up-3">
+      Authentic Mexican cuisine rooted in family tradition — from a church fundraiser in the 1980s to Austin's beloved neighborhood kitchen. Every tortilla is hand-made, every dish tells a story.
+    </p>
+    <div class="hero-buttons fade-up-4">
+      <a href="#menu" class="btn-primary">View Our Menu</a>
+      <a href="#about" class="btn-outline">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <span class="hero-year">2006</span>
+      <div class="hero-img-content">
+        <p class="hero-img-quote">"Their home made tortillas make the best breakfast burritos in town!"</p>
+        <p class="hero-img-attr">Dana V. — Yelp</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="story-strip">
+  <div class="strip-item">
+    <div class="num">40+</div>
+    <div class="label">Years of tradition</div>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-item">
+    <div class="num">100%</div>
+    <div class="label">Handmade tortillas</div>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-item">
+    <div class="num">4.3★</div>
+    <div class="label">TripAdvisor rating</div>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-item">
+    <div class="num">BYOB</div>
+    <div class="label">Bring your own bottle</div>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-item">
+    <div class="num">Catering</div>
+    <div class="label">Events & gatherings</div>
+  </div>
+</div>
+
+<!-- ABOUT / STORY -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <!-- Decorative circles -->
+    <svg class="talavera" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="140" cy="140" r="130" stroke="#C2582A" stroke-width="4"/>
+      <circle cx="140" cy="140" r="100" stroke="#C2582A" stroke-width="2"/>
+      <circle cx="140" cy="140" r="70" stroke="#C2582A" stroke-width="3"/>
+      <path d="M140 10 L140 270 M10 140 L270 140" stroke="#C2582A" stroke-width="1.5"/>
+      <path d="M50 50 L230 230 M230 50 L50 230" stroke="#C2582A" stroke-width="1"/>
+    </svg>
+    <svg class="talavera2" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="10" width="200" height="200" stroke="#C2582A" stroke-width="3"/>
+      <rect x="30" y="30" width="160" height="160" stroke="#C2582A" stroke-width="2"/>
+      <rect x="55" y="55" width="110" height="110" stroke="#C2582A" stroke-width="2"/>
+      <circle cx="110" cy="110" r="40" stroke="#C2582A" stroke-width="2"/>
+    </svg>
+
+    <div class="about-big-text">
+      Desde<br>1980
+    </div>
+    <p class="about-visual-sub">A Family Legacy in Every Bite</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-year">1980s</span>
+        <span class="tl-text">Connie Rodriguez begins cooking for a local church fundraiser — the enchiladas are an instant hit.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1990s</span>
+        <span class="tl-text">The fundraiser grows into a full catering company, serving Central Texas events and gatherings.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2006</span>
+        <span class="tl-text">La Cocina de Consuelo opens its restaurant doors on Burnet Rd, Austin.</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2019</span>
+        <span class="tl-text">Connie passes the apron to her niece Letty Garcia, who lovingly continues the tradition.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <p class="section-tag">Our Story</p>
+    <h2 class="section-title">A Kitchen Born from<br><em>Love & Community</em></h2>
+    <p class="section-body">
+      La Cocina de Consuelo — Consuelo's Kitchen — began as something as simple and beautiful as feeding people who needed nourishment. In the 1980s, Connie Rodriguez started cooking for a local church fundraiser, and her enchiladas became the talk of the congregation.
+    </p>
+    <p class="section-body" style="margin-top:1.25rem;">
+      What started in a church hall grew decade by decade into a beloved Austin institution. Today, Letty Garcia carries that same spirit: hand-crafting tortillas each morning, mixing authentic sauces from memory, and welcoming every guest like family.
+    </p>
+    <p class="section-body" style="margin-top:1.25rem;">
+      We're proud to serve authentic Mexican cuisine in the heart of Central Austin — with BYOB, daily lunch specials, full catering services, and a menu that mixes tradition with Connie's original flair for new flavors.
+    </p>
+    <div style="margin-top:2.5rem;">
+      <a href="#menu" class="btn-primary">Explore the Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="menu-header">
+    <div>
+      <p class="section-tag">What We Serve</p>
+      <h2 class="section-title">Authentic Dishes, <br><em>Made Fresh Daily</em></h2>
+    </div>
+    <a href="https://la-cocina-de-consuelo.square.site/" target="_blank" class="btn-primary" style="background:var(--terracotta-light);">Order Online</a>
+  </div>
+
+  <div class="menu-tabs">
+    <div class="menu-tab active" onclick="switchTab('breakfast')">Breakfast</div>
+    <div class="menu-tab" onclick="switchTab('plates')">Plates</div>
+    <div class="menu-tab" onclick="switchTab('apps')">Appetizers</div>
+    <div class="menu-tab" onclick="switchTab('soups')">Soups & More</div>
+    <div class="menu-tab" onclick="switchTab('drinks')">Beverages</div>
+  </div>
+
+  <div class="menu-panel active" id="tab-breakfast">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Machacado Burrito</div><div class="menu-item-desc">Dry spiced beef, egg, pico de gallo. Choice of flour, corn, or wheat tortilla.</div></div><div class="menu-item-price">$8.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Barbacoa Burrito</div><div class="menu-item-desc">Slow-simmered beef. Pico de gallo upon request.</div></div><div class="menu-item-price">$8.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Migas Burrito</div><div class="menu-item-desc">Scrambled eggs with tortilla chips, pico de gallo, ancho sauce, Monterey Jack.</div></div><div class="menu-item-price">$7.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Build Your Own Burrito</div><div class="menu-item-desc">Pick 3: egg, potato, chorizo, avocado, beans, rice, pico, cheese, nopalitos & more.</div></div><div class="menu-item-price">$6.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chilaquiles</div><div class="menu-item-desc">Tortilla chips with ancho chili sauce, pico de gallo and queso fresco. Add chicken or egg.</div></div><div class="menu-item-price">$11.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Huevos Rancheros</div><div class="menu-item-desc">Eggs sunny side up, topped with house salsa. Served all day.</div></div><div class="menu-item-price">$11.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chorizo con Huevo</div><div class="menu-item-desc">Scrambled eggs mixed with beef chorizo, served with your sides.</div></div><div class="menu-item-price">$11.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Barbacoa Plate</div><div class="menu-item-desc">Slow-simmered beef. Served with rice and refried beans.</div></div><div class="menu-item-price">$13.99</div></div>
+  </div>
+
+  <div class="menu-panel" id="tab-plates">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Enchiladas Plate</div><div class="menu-item-desc">Two enchiladas. Cheddar/red, spinach-mushroom/verde, queso fresco/ancho, potato/chipotle.</div></div><div class="menu-item-price">$14.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Beef or Chicken Enchiladas</div><div class="menu-item-desc">Two enchiladas: beef with chili con carne, or chicken with verde sauce.</div></div><div class="menu-item-price">$15.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Fajita Taco Plate</div><div class="menu-item-desc">Two soft fajita tacos, beef or chicken, grilled with poblano peppers and onions.</div></div><div class="menu-item-price">$16.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tacos al Pastor</div><div class="menu-item-desc">Three beef tacos on corn tortilla. Achiote-marinated, grilled with pineapple and onions.</div></div><div class="menu-item-price">$16.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Fish Tacos</div><div class="menu-item-desc">Three grilled tilapia tacos on corn tortilla with special sauce and cilantro.</div></div><div class="menu-item-price">$16.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Bistec a la Mexicana</div><div class="menu-item-desc">Beef steak grilled with serrano peppers, tomatoes, onions. Choice of tortilla.</div></div><div class="menu-item-price">$16.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chicken Flautas</div><div class="menu-item-desc">Three chicken flautas on a bed of lettuce with sour cream and cheese.</div></div><div class="menu-item-price">$13.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Combo Plate</div><div class="menu-item-desc">Two enchiladas and one crispy beef taco, served with a dollop of guacamole.</div></div><div class="menu-item-price">$17.99</div></div>
+  </div>
+
+  <div class="menu-panel" id="tab-apps">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Guacamole for Two</div><div class="menu-item-desc">Fresh, house-made guacamole.</div></div><div class="menu-item-price">$7.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Queso for Two</div><div class="menu-item-desc">Melted, creamy queso.</div></div><div class="menu-item-price">$7.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Queso Especial</div><div class="menu-item-desc">Queso topped with a generous dollop of guacamole.</div></div><div class="menu-item-price">$9.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chori-Queso</div><div class="menu-item-desc">Queso with beef chorizo, served with 3 corn tortillas.</div></div><div class="menu-item-price">$10.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Nachos Compuestos</div><div class="menu-item-desc">Tortilla chips with refried beans, cheddar, jalapeños, and sour cream.</div></div><div class="menu-item-price">$10.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Spinach & Mushroom Quesadilla</div><div class="menu-item-desc">Flour tortilla with spinach, mushroom, and cheese.</div></div><div class="menu-item-price">$9.00</div></div>
+  </div>
+
+  <div class="menu-panel" id="tab-soups">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chicken Tortilla Soup</div><div class="menu-item-desc">Light shredded chicken, carrots, celery, topped with Monterey Jack, tortilla chips, avocado.</div></div><div class="menu-item-price">$10.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Soup & Taco Combo</div><div class="menu-item-desc">Bowl of chicken tortilla soup plus one taco of your choice.</div></div><div class="menu-item-price">$13.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Taco Salad</div><div class="menu-item-desc">Tostado chips, black beans, Monterey Jack, lettuce, tomatoes. Ranch or balsamic.</div></div><div class="menu-item-price">$12.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Torta</div><div class="menu-item-desc">Beef fajita, chicken fajita, or al pastor on bolillo bread. Served with fideo.</div></div><div class="menu-item-price">$16.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Stuffed Burrito</div><div class="menu-item-desc">Hand-made flour tortilla with picadillo, chicken, or avocado, beans, rice, lettuce, cheese.</div></div><div class="menu-item-price">$11.99</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Bowl of Fideo</div><div class="menu-item-desc">Vermicelli topped with beef picadillo.</div></div><div class="menu-item-price">$10.00</div></div>
+  </div>
+
+  <div class="menu-panel" id="tab-drinks">
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Coffee</div><div class="menu-item-desc">Hot brewed coffee.</div></div><div class="menu-item-price">$3.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Fresh Limeade</div><div class="menu-item-desc">House-squeezed limeade.</div></div><div class="menu-item-price">$4.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Agua de Jamaica</div><div class="menu-item-desc">Classic hibiscus water, chilled.</div></div><div class="menu-item-price">$4.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Jarritos</div><div class="menu-item-desc">Mexican bottled sodas in assorted flavors.</div></div><div class="menu-item-price">$4.00</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Sodas & Juice</div><div class="menu-item-desc">Sodas, apple juice, or orange juice.</div></div><div class="menu-item-price">$3.00–$3.50</div></div>
+    <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tea & Water</div><div class="menu-item-desc">Iced tea or bottled water.</div></div><div class="menu-item-price">$3.00</div></div>
+  </div>
+
+  <!-- Daily Specials -->
+  <div class="specials-banner">
+    <h3>Daily Lunch Specials — $11.99 (11am–2pm)</h3>
+    <div class="specials-grid">
+      <div class="special-day">
+        <div class="special-day-name">Monday</div>
+        <div class="special-day-dish">Chicken Flautas</div>
+        <div class="special-price">$11.99</div>
+      </div>
+      <div class="special-day">
+        <div class="special-day-name">Tuesday</div>
+        <div class="special-day-dish">Carne Guisada Plate</div>
+        <div class="special-price">$11.99</div>
+      </div>
+      <div class="special-day">
+        <div class="special-day-name">Wednesday</div>
+        <div class="special-day-dish">Chicken Mole Plate</div>
+        <div class="special-price">$11.99</div>
+      </div>
+      <div class="special-day">
+        <div class="special-day-name">Thursday</div>
+        <div class="special-day-dish">Tortilla Soup & Taco</div>
+        <div class="special-price">$11.99</div>
+      </div>
+      <div class="special-day">
+        <div class="special-day-name">Friday</div>
+        <div class="special-day-dish">Chile Relleno Plate</div>
+        <div class="special-price">$11.99</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE / VISIT -->
+<section class="experience" id="experience">
+  <div class="exp-content">
+    <p class="section-tag">The Experience</p>
+    <h2 class="section-title">Small Kitchen,<br><em>Big Heart</em></h2>
+    <p class="section-body">
+      La Cocina de Consuelo is a tiny, first-class Mexican restaurant on Burnet Road in Central Austin. Dine in with our limited seating, or grab take-out to go. Bring your own bottle and settle in.
+    </p>
+    <div class="exp-features">
+      <div class="exp-feature">
+        <div class="exp-icon">🌽</div>
+        <div>
+          <div class="exp-feature-title">Hand-Made Tortillas Daily</div>
+          <div class="exp-feature-desc">Flour, corn, and wheat tortillas crafted fresh every morning.</div>
+        </div>
+      </div>
+      <div class="exp-feature">
+        <div class="exp-icon">🍾</div>
+        <div>
+          <div class="exp-feature-title">BYOB Welcome</div>
+          <div class="exp-feature-desc">Bring your favorite wine or beer to complement your meal.</div>
+        </div>
+      </div>
+      <div class="exp-feature">
+        <div class="exp-icon">🏡</div>
+        <div>
+          <div class="exp-feature-title">Dine-In & Take-Out</div>
+          <div class="exp-feature-desc">Cozy sit-down dining with limited seating, or fast take-out.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-visual">
+    <div class="exp-card">
+      <span class="exp-card-open-quote">"</span>
+      <p class="exp-card-quote">
+        Big burritos, cheap, and fast-to-go. My favorite combo is eggs, rajas, and avocado on flour with salsa verde.
+      </p>
+      <p class="exp-card-attr">Dana V., Yelp Reviewer</p>
+    </div>
+
+    <div class="exp-hours">
+      <h3>Hours of Operation</h3>
+      <div class="hours-grid">
+        <div class="hours-row"><span class="day">Monday – Thursday</span><span class="time">7:00 am – 3:00 pm</span></div>
+        <div class="hours-row"><span class="day">Friday</span><span class="time">7:00 am – 6:30 pm</span></div>
+        <div class="hours-row"><span class="day">Saturday</span><span class="closed">Closed</span></div>
+        <div class="hours-row"><span class="day">Sunday</span><span class="time">8:00 am – 2:00 pm</span></div>
+      </div>
+      <div style="margin-top:1.25rem; padding: 0.75rem; background: rgba(194,88,42,0.08); border-left: 2px solid var(--terracotta); font-size:0.82rem; color:var(--dark-mid); line-height:1.5;">
+        📍 4516 Burnet Rd, Austin, TX 78756 · <strong style="color:var(--terracotta)">(512) 524-4740</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING -->
+<section class="catering" id="catering">
+  <div>
+    <p class="section-tag">Private & Corporate</p>
+    <h2 class="section-title">We Bring the<br><em>Fiesta to You</em></h2>
+    <p class="catering-desc">
+      From intimate family gatherings to office parties, La Cocina de Consuelo offers full-service catering with our famous enchiladas, breakfast burritos, party platters, and more. Let Letty and her team make your event unforgettable.
+    </p>
+    <div class="catering-includes">
+      <div class="catering-item">Famous enchiladas</div>
+      <div class="catering-item">Party platters</div>
+      <div class="catering-item">Breakfast burritos</div>
+      <div class="catering-item">Custom menus</div>
+      <div class="catering-item">Guacamole & queso</div>
+      <div class="catering-item">Full taco bars</div>
+    </div>
+    <a href="tel:5125244740" class="btn-primary" style="background: var(--sage); display:inline-block;">Call to Book: (512) 524-4740</a>
+  </div>
+
+  <div class="catering-visual">
+    <div class="catering-stat">
+      <div class="catering-stat-num">40+</div>
+      <div class="catering-stat-label"><strong>Years of catering experience</strong><br>Serving Central Texas since the 1980s</div>
+    </div>
+    <div class="catering-stat">
+      <div class="catering-stat-num">Any</div>
+      <div class="catering-stat-label"><strong>Size of event welcome</strong><br>Small family gatherings to large office events</div>
+    </div>
+    <div style="background: var(--ochre-pale); padding: 1.5rem 2rem; border: 1px solid rgba(201, 149, 59, 0.3);">
+      <p style="font-family: var(--serif); font-size: 1.05rem; font-style: italic; color: var(--dark-mid); line-height: 1.6;">
+        "We love being a part of your household and friendly gatherings."
+      </p>
+      <p style="font-size: 0.78rem; color: var(--mid); margin-top: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">— Letty Garcia, Owner</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <p class="section-tag">What Guests Say</p>
+  <h2 class="section-title">Loved by <em>Austin</em></h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Their home made tortillas make the best breakfast burritos in town! A true Austin gem."</p>
+      <div class="review-author">Dana V.</div>
+      <div class="review-source">Yelp Review</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Authentic Mexican cuisine in central Austin. Try the home-made flour and corn tortillas. BYOB is a big plus!"</p>
+      <div class="review-author">Austin Visitor</div>
+      <div class="review-source">Austin Texas.org</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">"A tiny, first-class restaurant. Big burritos, cheap, and fast. The chicken enchiladas are absolutely worth it."</p>
+      <div class="review-author">Austin Chronicle</div>
+      <div class="review-source">Austin Chronicle</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-text">
+    <h2 class="cta-title">Ready to Taste <br>Consuelo's Kitchen?</h2>
+    <p class="cta-sub">Visit us on Burnet Rd, order online, or call to arrange catering.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="https://la-cocina-de-consuelo.square.site/" target="_blank" class="btn-white">Order Online</a>
+    <a href="tel:5125244740" class="btn-outline-white">Call (512) 524-4740</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">La Cocina de Consuelo</a>
+      <p>Authentic Mexican cuisine in Central Austin, rooted in four decades of family tradition. Hand-made tortillas, daily specials, and full catering services.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experience">Visit Us</a></li>
+        <li><a href="#catering">Catering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <ul>
+        <li><a href="#">Mon–Thu: 7am–3pm</a></li>
+        <li><a href="#">Friday: 7am–6:30pm</a></li>
+        <li><a href="#">Saturday: Closed</a></li>
+        <li><a href="#">Sunday: 8am–2pm</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item">4516 Burnet Rd<br>Austin, TX 78756</div>
+      <div class="footer-contact-item">(512) 524-4740<br>(512) 524-4741</div>
+      <div class="footer-contact-item">becky@consueloskitchen.com</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 La Cocina de Consuelo. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/La-Cocina-De-Consuelo-120758341271308" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/cocinadeconsuelo/" target="_blank">Instagram</a>
+      <a href="https://www.yelp.com/biz/la-cocina-de-consuelo-austin" target="_blank">Yelp</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.exp-feature, .review-card, .tl-item, .catering-stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
